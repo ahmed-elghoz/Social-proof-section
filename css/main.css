@@ -18,7 +18,8 @@
 body {
   font-family: "Spartan", sans-serif;
   background-color: var(--main-bg);
-  background: url(../images/bg-pattern-top-desktop.svg) top left no-repeat, url(../images/bg-pattern-bottom-desktop.svg) bottom right no-repeat;
+  background: url(../images/bg-pattern-top-desktop.svg) top left no-repeat,
+    url(../images/bg-pattern-bottom-desktop.svg) bottom right no-repeat;
 }
 .main-container {
   height: 100vh;
@@ -37,20 +38,21 @@ body {
 /* General End */
 
 /* Main Style Start */
-.heading {
+.main-heading {
   max-width: calc(95% / 2);
 }
-.heading h1 {
+.main-heading h1 {
   font-weight: 700;
   color: var(--main-color);
   font-size: 50px;
   max-width: 80%;
 }
-.heading h1 + p {
+.main-heading p {
   max-width: 95%;
   margin-top: 10px;
   line-height: 1.6;
   color: var(--p-color);
+  opacity: 0.8;
 }
 .rate {
   width: calc(95% / 2);
@@ -132,22 +134,162 @@ body {
   color: var(--main-bg);
   font-size: var(--fontsize);
   line-height: 1.5;
+  opacity: 0.6;
 }
 .feedback .card .heading p {
   color: var(--secoundary-color);
   font-size: var(--fontsize);
   opacity: 0.7;
 }
-.feedback .card .rebort {
+.feedback .card .report {
   font-size: 12px;
   color: var(--main-bg);
-  opacity: 0.8;
+  opacity: 0.6;
   max-width: 93%;
   line-height: 1.8;
   margin-top: 35px;
 }
 /* Main Style End */
-
+/* Media Start */
+@media (max-width: 1000px) {
+  .main-container {
+    height: 100%;
+  }
+  .container {
+    max-width: 990px;
+    padding: 20px;
+  }
+  .main-heading h1 {
+    font-size: 40px;
+  }
+  .main-heading p {
+    font-size: calc(var(--fontsize) - 1px);
+  }
+  .rate {
+    left: -100px;
+  }
+  .rate .block h3 {
+    font-size: calc(var(--fontsize) - 2px);
+  }
+  .rate .block .stars img {
+    width: 13px;
+  }
+  .feedback {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .feedback .card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .feedback .card:last-child {
+    transform: translateX(30%);
+    -webkit-transform: translateX(30%);
+    -moz-transform: translateX(30%);
+    -ms-transform: translateX(30%);
+    -o-transform: translateX(30%);
+  }
+  .feedback .card {
+    padding: 40px;
+    flex-basis: 45%;
+  }
+  .feedback .card .heading {
+    display: flex;
+    align-items: center;
+  }
+  .feedback .card .heading .info {
+    margin-left: 20px;
+  }
+  .feedback .card .report {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 900px) {
+  body {
+    background: url(../images/bg-pattern-top-mobile.svg) top left no-repeat,
+      url(../images/bg-pattern-bottom-mobile.svg) bottom right no-repeat;
+  }
+  .container {
+    max-width: 500px;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+  }
+  .main-heading {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .main-heading h1 {
+    font-size: 33px;
+    margin-bottom: 20px;
+    max-width: 70%;
+  }
+  .main-heading p {
+    line-height: 1.6;
+    font-weight: 700;
+    max-width: 65%;
+  }
+  .rate,
+  .rate .block {
+    position: unset !important;
+    width: 100%;
+  }
+  .feedback,
+  .feedback .card {
+    width: 100%;
+  }
+  .feedback {
+    display: inline-block;
+    margin-top: 50px;
+  }
+  .feedback .card:last-child {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    max-width: 330px;
+    padding: 60px 0;
+  }
+  .main-heading h1 {
+    max-width: 100%;
+    font-size: 30px;
+  }
+  .main-heading p {
+    max-width: 95%;
+    font-size: calc(var(--fontsize) - 2px);
+  }
+  .rate .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .rate .block .stars {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .feedback {
+    height: 250px;
+  }
+  .feedback .card {
+    padding: 40px 30px;
+  }
+  .feedback .card .heading img {
+    margin-right: 0;
+  }
+  .feedback .card .report {
+    max-width: 92%;
+    text-align: left;
+  }
+}
+/* Media End */
 /* Footer Start */
 .attribution {
   font-size: 11px;
